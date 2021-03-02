@@ -22,11 +22,11 @@ public class Main {
             int element = it.next(); //regresar el dato y avanzar el iterador
 
             if(element == 3){
-                lista1.insert(10, LinkedList.BEFORE, backupIt);
+                lista1.insert(10, LinkedList.Position.BEFORE, backupIt);
             }
 
             if(element == 7){
-                lista1.insert(15, LinkedList.AFTER, backupIt);
+                lista1.insert(15, LinkedList.Position.AFTER, backupIt);
             }
         }
 

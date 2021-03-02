@@ -5,8 +5,9 @@ package uaslp.ingenieria.labs.list;
  */
 public class LinkedList {
 
-    public static final boolean BEFORE = false;
-    public static final boolean AFTER = true;
+    public enum Position{
+        BEFORE,AFTER
+    }
 
     private Node head;
     private Node tail;
@@ -98,11 +99,11 @@ public class LinkedList {
         return new ReverseIterator(tail);
     }
 
-    public void insert(int data, boolean position, Iterator it){
+    public void insert(int data, Position pos, Iterator it){
         Node newNode = new Node(data);
         Node currentNode = it.getCurrentNode();
 
-        if(position == AFTER){
+        if(pos == Position.AFTER){
             newNode.setNext((currentNode.getNext()));
             newNode.setPrevious(currentNode);
             currentNode.setNext(newNode);
