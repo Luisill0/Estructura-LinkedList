@@ -37,12 +37,8 @@ public class ArrayList<H> implements List<H>{
 
     @Override
     public void delete(int index) {
-        if(index == size-1){
-            array[index] = null;
-        }else {
-            for (int i = index; i < size; i++) {
-                array[i] = array[i + 1];
-            }
+        for (int i = index; i < size-1; i++) {
+            array[i] = array[i + 1];
         }
         size--;
     }

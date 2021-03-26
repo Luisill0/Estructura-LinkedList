@@ -13,6 +13,8 @@ public class Main {
         list1.add(4);
         list1.add(3);
         list1.add(7);
+        list1.add(10);
+        list1.add(15);
 
         list2.add("hola");
         list2.add(" Object ");
