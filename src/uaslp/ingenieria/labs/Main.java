@@ -6,9 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //int cuenta = LinkedList.getListsCount();
-        List<Integer> list1 = new LinkedList<>();
-        List<String> list2 = new LinkedList<>();
+        List<Integer> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
 
         list1.add(1);
         list1.add(4);

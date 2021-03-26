@@ -7,5 +7,4 @@ public interface List<T>{
     int getSize();
     Iterator<T> getIterator();
     Iterator <T> getReverseIterator();
-    void insert(T data, Position pos, Iterator<T> it);
 }

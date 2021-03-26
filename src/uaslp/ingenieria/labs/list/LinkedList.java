@@ -172,33 +172,6 @@ public class LinkedList<G> implements List<G> {
     }
 
     @Override
-    public void insert(G data, Position pos, Iterator<G> it){
-        Node<G> newNode = new Node<>(data);
-        Node<G> currentNode =((ForwardIterator)it).getCurrentNode();
-
-        if(pos == Position.AFTER){
-            newNode.next = currentNode.next;
-            newNode.previous = currentNode;
-            currentNode.next = newNode;
-            if(newNode.next != null){
-                newNode.next.previous = newNode;
-            }else{
-                tail = newNode;
-            }
-        }else{
-            newNode.previous = currentNode.previous;
-            newNode.next = currentNode;
-            currentNode.previous = newNode;
-            if(newNode.previous != null){
-                newNode.previous.next = newNode;
-            }else{
-                head = newNode;
-            }
-        }
-        size++;
-    }
-
-    @Override
     public int getSize() {
         return size;
     }
