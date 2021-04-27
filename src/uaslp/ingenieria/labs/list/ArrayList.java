@@ -1,7 +1,5 @@
 package uaslp.ingenieria.labs.list;
 
-import uaslp.ingenieria.labs.list.Iterator;
-
 public class ArrayList<H> implements List<H>{
 
     private Object array[];
