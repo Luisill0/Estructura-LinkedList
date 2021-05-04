@@ -22,10 +22,6 @@ public class LinkedList<G> implements List<G> {
             this.currentNode = head;
         }
 
-        public ForwardIterator(ForwardIterator iterator){
-            currentNode = iterator.currentNode;
-        }
-
         @Override
         public boolean hasNext(){
             return currentNode != null;
@@ -37,10 +33,6 @@ public class LinkedList<G> implements List<G> {
             currentNode = currentNode.next;
             return data;
         }
-
-        public Node<G> getCurrentNode(){
-            return currentNode;
-        }
     }
 
     public class ReverseIterator implements Iterator<G>{
@@ -48,10 +40,6 @@ public class LinkedList<G> implements List<G> {
 
         public ReverseIterator(){
             this.currentNode = tail;
-        }
-
-        public ReverseIterator(ReverseIterator reverseIterator){
-            currentNode = reverseIterator.currentNode;
         }
 
         @Override
@@ -64,10 +52,6 @@ public class LinkedList<G> implements List<G> {
             G data = currentNode.data;
             currentNode = currentNode.previous;
             return data;
-        }
-
-        Node<G> getCurrentNode(){
-            return currentNode;
         }
     }
 
@@ -126,12 +110,12 @@ public class LinkedList<G> implements List<G> {
      * @param index 0-index
      */
     @Override
-    public void delete(int index){
+    public void delete(int index) throws IndexOutOfBoundsException{
         Node<G> currentNode = head;
         int currentIndex = 0;
 
         if(index < 0 || index >= size){
-            return;
+            throw new IndexOutOfBoundsException();
         }
         size--;
 
