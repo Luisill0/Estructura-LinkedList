@@ -34,7 +34,11 @@ public class ArrayList<H> implements List<H>{
     }
 
     @Override
-    public void delete(int index) {
+    public void delete(int index) throws IndexOutOfBoundsException{
+        if(index < 0 || index > size){
+            throw new IndexOutOfBoundsException();
+        }
+
         for (int i = index; i < size-1; i++) {
             array[i] = array[i + 1];
         }
@@ -64,10 +68,6 @@ public class ArrayList<H> implements List<H>{
             this.currentIndex = 0;
         }
 
-        public ForwardIterator(int currentIndex){
-            this.currentIndex = currentIndex;
-        }
-
         @Override
         public boolean hasNext(){
             return currentIndex < size;
@@ -87,10 +87,6 @@ public class ArrayList<H> implements List<H>{
 
         public ReverseIterator(){
             this.currentIntex = size-1;
-        }
-
-        public ReverseIterator(int currentIntex){
-            this.currentIntex = currentIntex;
         }
 
         @Override
